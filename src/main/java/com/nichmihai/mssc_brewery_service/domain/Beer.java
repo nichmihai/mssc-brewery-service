@@ -19,9 +19,8 @@ import java.util.UUID;
 public class Beer {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
+    @GeneratedValue(generator = "UUID", strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "uuid", length = 36, updatable = false, nullable = false)
     private UUID id;
 
     @Version
